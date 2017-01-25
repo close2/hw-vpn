@@ -215,7 +215,7 @@ A github gist is used to pass those informations between the devices.
 
 Steps 1-5 are the same (client and server reversed).
  
-(6) If successful start openvpn and pass the server public IP and port.
+6) If successful start openvpn and pass the server public IP and port.
 
 
 
