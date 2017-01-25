@@ -67,7 +67,7 @@ subnet 10.42.42.0 netmask 255.255.255.0 {
 * Copy the vpn.sh script to the server and client (`/usr/local/bin/`)
 * If you don't have a github account yet, create one.
 * In the github security web-interface create a new token, which only
-  hast `gist` access.
+  has `gist` access.
 * Create 2 gists: a server and client gist.  The gist ids are shown
   in the urls.
 * Write a config file:
