@@ -200,21 +200,21 @@ A github gist is used to pass those informations between the devices.
 
 ### Server side
 
-1) Use `stunc` to send a UDP package to a public stun server.
-2) Extract the local src port, the mapped src port and the public IP
+1. Use `stunc` to send a UDP package to a public stun server.
+2. Extract the local src port, the mapped src port and the public IP
    from the stun response.
-3) Store the mapped src port and the public IP in a gist on github.
-4) Fetch the corresponding github gist from the client and extract
+3. Store the mapped src port and the public IP in a gist on github.
+4. Fetch the corresponding github gist from the client and extract
    the mapped client src port and public client IP.
-5) Try to establish a connection to the mapped client IP : mapped client src port
+5. Try to establish a connection to the mapped client IP : mapped client src port
    with nat-traverse.
-6) If successful start openvpn at the same local src port (from step 2)
+6. If successful start openvpn at the same local src port (from step 2)
 
 
 ### Client side
 
 Steps 1-5 are the same (client and server reversed).
-6) If successful start openvpn and pass the server public IP and port.
+6. If successful start openvpn and pass the server public IP and port.
 
 
 
