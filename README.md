@@ -2,16 +2,19 @@
 
 This project provides scripts and config files for 2 armbian devices
 and a cheap wifi-router.  The armbian devices will automatically create
-an *_unencrypted_* vpn connection and automatically tunnel everything.
+an *_unencrypted_* vpn connection and automatically tunnel everything
+from the client to the server.  Everything connected on the client side
+will not see the internet connection from the client, but believe it is
+connected to the same internet as the server device.
+
+I have created this project to automatically tunnel netflix,...
+to another country.  One of the armbian devices (the openvpn server)
+was sent to a friend who allows me to use her internet connection.
 
 The vpn connection will (usually) even work if both devices are behind
 NAT.  No port forwarding rules have to be established on either side.
 
 Typical armbian devices are raspberry pis and olimex OLinuXinos.
-
-I have created this project to automatically tunnel netflix,...
-to another country.  One of the armbian devices (the openvpn server)
-was sent to a friend who allows me to use her internet connection.
 
 Everything which connects to the wifi router is automatically tunneled
 to my friend.  I can now simply switch country by connecting my
@@ -64,6 +67,11 @@ subnet 10.42.42.0 netmask 255.255.255.0 {
   Enable the dhcpd server: `update-rc.d dhcpd enable`
   
   Finally restart the client.
+* Change the routers local IP to 10.42.43.1 and turn off dhcp.  
+  This is also a good moment to configure the wifi.  The only way to
+  connect to the router from now on, is to set a static IP on your
+  PC (for instance: 10.42.43.3; Note that 10.42.43.2 is used by the
+  armbian client device).
 * Copy the vpn.sh script to the server and client (`/usr/local/bin/`)
 * If you don't have a github account yet, create one.
 * In the github security web-interface create a new token, which only
