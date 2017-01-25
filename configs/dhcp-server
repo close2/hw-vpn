@@ -1,0 +1,12 @@
+add second interface in /etc/network/interfaces see interfaces.client
+
+
+# then adapt /etc/defaults/isc... and change network to eth0
+# and
+# /etc/dhcp/dhcpd.conf
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+
+subnet 10.42.42.0 netmask 255.255.255.0 {
+  range 10.42.42.100 10.42.42.200;
+  option routers 10.42.42.1;
+}

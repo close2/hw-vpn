@@ -1,0 +1,10 @@
+server:
+nat-traverse
+sofia-sip-bin
+
+client:
+nat-traverse
+isc-dhcp-server
+sofia-sip-bin
+
+
