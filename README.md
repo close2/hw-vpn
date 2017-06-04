@@ -28,17 +28,17 @@ server).
 
 * Log into the armbian devices and install:
   On the server:
-  ```
+```
 nat-traverse
 sofia-sip-bin
-  ```
+```
 
   On the client:
-  ```
+```
 nat-traverse
 isc-dhcp-server
 sofia-sip-bin
-  ```
+```
   
   I prefer to first install aptitude (`sudo apt-get install aptitude`
   followed by `sudo aptitude install nat-traverse`...).
@@ -48,7 +48,7 @@ sofia-sip-bin
 * Copy the openvpn server.conf to the `server:/etc/openvpn` and the
   client.conf to the `client:/etc/openvpn`
 * Configure the network and dhcpd server on the client:
-  ```
+```
 add second interface in /etc/network/interfaces see interfaces.client
 
 # then adapt /etc/defaults/isc... and change network to eth0
@@ -60,7 +60,7 @@ subnet 10.42.42.0 netmask 255.255.255.0 {
   range 10.42.42.100 10.42.42.200;
   option routers 10.42.42.1;
 }
-  ```
+```
   Replace the content of /etc/network/interfaces on the client with
   the content of configs/interfaces.client.
   
@@ -79,7 +79,7 @@ subnet 10.42.42.0 netmask 255.255.255.0 {
 * Create 2 gists: a server and client gist.  The gist ids are shown
   in the urls.
 * Write a config file:
-  ```
+```
 # this is the configuration file for /usr/local/bin/vpn.sh
 
 ROLE=CLIENT
@@ -89,7 +89,7 @@ PEER_GIST_ID=
 PEER_GIST_FILE_NAME=
 
 TOKEN=
-  ```
+```
   `ROLE` must be either `CLIENT` or `SERVER`.  The `MY_GIST_ID` on the
   client is the same as `PEER_GIST_ID` on the server.
   
