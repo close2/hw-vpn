@@ -232,6 +232,15 @@ Steps 1-5 are the same (client and server reversed).
 All those steps are executed in `vpn.sh` together with error handling
 and retries.
 
+### `rc.local`
+
+`vpn.sh` is started in `/etc/rc.local`:
+
+```
+/usr/local/bin/vpn.sh &
+
+exit 0
+```
 
 # DHCP and the router
 
